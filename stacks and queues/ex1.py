@@ -12,6 +12,22 @@ class Node:
         return self._next
 
 class TripleStack:
+    """
+    Implementation of a triple stack using only one list.
+    I'm storing the elements of the 1st stack on indexes with
+    i % 3 == 0, 2nd stack on indexes with i % 3 == 1, and
+    3rd stack on indexes with i % 3 == 2.
+    Since indexes on python lists are sequential (i.e. you can't 
+    have a list with 10 elements and then add something at position 15),
+    everytime I add a new element that's beyond the current length of
+    the list, I add None to fields as necessary. E.g. if the list has
+    length 15 and there are already 5 elements on stack 2
+    (indexes 1,4,7,10,13), if I need to add something to stack 2, it goes
+    on index 16. I add None on index 15, the node on index 16 and None on index
+    17. If I need to do it again, i add None on index 18, the node on 19 and
+    None on 20, and so on
+    """
+
     def __init__(self):
         self._triplestack = []
 
