@@ -1,23 +1,11 @@
 class Node:
     def __init__(self, initdata=None):
-        self._data = initdata
-        self._next = None
-
-    @property
-    def data(self):
-        return self._data
-
-    @property
-    def next(self):
-        return self._next
+        self.data = initdata
+        self.next = None
 
 class Stack:
     def __init__(self, node=None):
-        self._top = node
-
-    @property
-    def top(self):
-        return self._top
+        self.top = node
         
     def pop(self):
         if self.top is None:

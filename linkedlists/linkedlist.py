@@ -1,16 +1,8 @@
 class LinkedList:
     def __init__(self, head=None):
-        self._head = head
-        self._last = head
+        self.head = head
+        self.last = head
 
-    @property
-    def head(self):
-        return self._head
-
-    @property
-    def last(self):
-        return self._last
-    
     def add(self, node):
         node.next = self.head
         self.head = node
