@@ -5,22 +5,22 @@ class Node:
 
 class Stack:
     def __init__(self, node=None):
-        self.top = node
+        self.__top = node
         
     def pop(self):
-        if self.top is None:
-            return None
-        removed_node = self.top
-        self.top = self.top.next
+        if self.__top is None:
+            raise IndexError('Pop from empty stack')
+        removed_node = self.__top
+        self.__top = self.__top.next
         return removed_node.data
 
     def push(self, node=None):
         if node is not None:
-            node.next = self.top
-            self.top = node
+            node.next = self.__top
+            self.__top = node
 
     def peek(self):
-        if self.top is None:
-            return None
-        return self.top.data
+        if self.__top is None:
+            raise IndexError('Pop from empty stack')
+        return self.__top.data
 
